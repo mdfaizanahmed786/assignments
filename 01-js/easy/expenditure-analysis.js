@@ -6,13 +6,22 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  // I will get an object as input and I must return it as an array..
-  let ans=[]
-   for(let i=0; i<transactions.length; i++){
-    if(transactions[i].category in ans){
-        
+    let ans=[];
+
+    for(let i=0; i<transactions.length; i++){
+        let checkKeyExists=ans.find((item)=> item.category===transactions[i].category)
+         if(!checkKeyExists){
+           ans.push({
+            category: transactions[i].category,
+            totalSpent: transactions[i].price
+           })
+         }
+         else{
+             checkKeyExists.totalSpent+=transactions[i].price;
+         }
     }
-   }
+
+    return ans;
 }
 
 module.exports = calculateTotalSpentByCategory;
