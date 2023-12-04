@@ -6,7 +6,13 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+  // I will get an object as input and I must return it as an array..
+  let ans=[]
+   for(let i=0; i<transactions.length; i++){
+    if(transactions[i].category in ans){
+        
+    }
+   }
 }
 
 module.exports = calculateTotalSpentByCategory;
