@@ -16,8 +16,37 @@
   Once you've implemented the logic, test your code by running
 */
 
+function checkAlphabeticalValues(str) {
+  const regex = /[^a-zA-Z]/;
+  return regex.test(str)
+}
+
 class Calculator {
-  
+  constructor(result = 0) {
+    this.result = result;
+  }
+  add(num) {
+   return this.result = this.result + num;
+  }
+  subtract(num) {
+    return this.result = this.result - num;
+  }
+  multiply(num) {
+    return this.result = this.result * num;
+  }
+  divide(num) {
+    if(num===0) throw new Error("Can divide with zero")
+    return this.result = this.result / num;
+  }
+  clear() {
+    return this.result = 0;
+  }
+  getResult() {
+    return this.result;
+  }
+  calculate(expression) {
+   //// This is the thing, I am not able to work on...
+  }
 }
 
 module.exports = Calculator;
