@@ -44,8 +44,13 @@ class Calculator {
   getResult() {
     return this.result;
   }
-  calculate(expression) {
-   //// This is the thing, I am not able to work on...
+  calculate(string) {
+    this.result = string;
+    this.result = this.result.replace(/\s/g,'');
+      const expression = this.result;
+      this.result = eval(expression);
+      if(this.result == Infinity) throw new Error;
+      else return this.result;
   }
 }
 
